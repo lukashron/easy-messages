@@ -1,0 +1,21 @@
+{
+    "name": "lukashron/easy-messages",
+    "description": "PHP very simple flash messages.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lukas Hron",
+            "email": "info@lukashron.cz"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "7.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "lukashron\\easyMessages\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
