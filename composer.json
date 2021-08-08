@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "lukashron\\easyMessages\\": "src/"
+            "LukasHron\\EasyMessages\\": "src/"
         }
     },
     "minimum-stability": "dev"
