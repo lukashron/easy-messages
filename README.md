@@ -1,5 +1,10 @@
 # Easy flash messages
 
+## Install
+```
+composer require lukashron/easy-messages
+```
+
 ## Use
 
 ```php
