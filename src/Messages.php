@@ -63,13 +63,15 @@ class Messages
      */
     public function render(): void
     {
-        foreach ($_SESSION[self::_PREFIX] as $message) {
-            echo $this->prefix;
-            echo sprintf($this->alertWrapper, $message[0], $message[1]);
-            echo $this->postfix;
-        }
+        if ($this->isMessages()) {
+            foreach ($_SESSION[self::_PREFIX] as $message) {
+                echo $this->prefix;
+                echo sprintf($this->alertWrapper, $message[0], $message[1]);
+                echo $this->postfix;
+            }
 
-        $this->clean();
+            $this->clean();
+        }
     }
 
     /**
@@ -78,5 +80,13 @@ class Messages
     private function clean(): void
     {
         $_SESSION[self::_PREFIX] = [];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isMessages(): bool
+    {
+        return isset($_SESSION[self::_PREFIX]);
     }
 }
