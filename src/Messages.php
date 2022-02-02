@@ -124,6 +124,6 @@ class Messages
      */
     public function isMessages(): bool
     {
-        return isset($_SESSION[self::_PREFIX]);
+        return count($_SESSION[self::_EM_SESSION_NAME]) > 0;
     }
 }
