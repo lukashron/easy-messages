@@ -45,6 +45,15 @@ class Messages
             return false;
         }
     }
+
+    /**
+     * @return string
+     */
+    public function getEmSessionName(): string
+    {
+        return self::_EM_SESSION_NAME;
+    }
+
     /**
      * @param string $prefix
      */
