@@ -85,7 +85,7 @@ class Messages
     /**
      * Clean all messages.
      */
-    private function clean(): void
+    public function clean(): void
     {
         $_SESSION[self::_PREFIX] = [];
     }
