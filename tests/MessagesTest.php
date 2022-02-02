@@ -19,7 +19,7 @@ require __DIR__ . '/bootstrap.php';
 
 final class MessagesTest extends TestCase
 {
-    public function testInit()
+    public function testInit(): void
     {
         $flashMessages = new Messages();
         $this->assertFalse($flashMessages->init());
@@ -29,5 +29,14 @@ final class MessagesTest extends TestCase
 
         unset($_SESSION[$sessionName]);
         $this->assertTrue($flashMessages->init());
+    }
+
+    public function testCreateMessage(): void
+    {
+        $flashMessages = new Messages();
+        $this->assertFalse($flashMessages->isMessages());
+
+        $flashMessages->add('msg', 'alert');
+        $this->assertTrue($flashMessages->isMessages());
     }
 }
