@@ -19,7 +19,7 @@ namespace LukasHron\EasyMessages;
 class Messages
 {
     /** @var string */
-    const _PREFIX = 'easy-msg';
+    const _EM_SESSION_NAME = 'easy-msg';
 
     private string $prefix = '';
     private string $postfix = '<br />';
@@ -60,7 +60,7 @@ class Messages
      */
     public function add(string $message, string $type = 'info'): void
     {
-        $_SESSION[self::_PREFIX][] = [
+        $_SESSION[self::_EM_SESSION_NAME][] = [
             '0' => $type,
             '1' => $message,
         ];
@@ -72,7 +72,7 @@ class Messages
     public function render(): void
     {
         if ($this->isMessages()) {
-            foreach ($_SESSION[self::_PREFIX] as $message) {
+            foreach ($_SESSION[self::_EM_SESSION_NAME] as $message) {
                 echo $this->prefix;
                 echo sprintf($this->alertWrapper, $message[0], $message[1]);
                 echo $this->postfix;
@@ -87,7 +87,7 @@ class Messages
      */
     public function clean(): void
     {
-        $_SESSION[self::_PREFIX] = [];
+        $_SESSION[self::_EM_SESSION_NAME] = [];
     }
 
     /**
