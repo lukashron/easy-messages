@@ -26,6 +26,26 @@ class Messages
     private string $alertWrapper = '<div class="alert alert-%s" role="alert">%s</div>';
 
     /**
+     * Messages session init.
+     */
+    public function __construct()
+    {
+        $this->init();
+    }
+
+    /**
+     * @return bool
+     */
+    public function init(): bool
+    {
+        if (! isset($_SESSION[self::_EM_SESSION_NAME])) {
+            $_SESSION[self::_EM_SESSION_NAME] = [];
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**
      * @param string $prefix
      */
     public function setPrefix(string $prefix)
