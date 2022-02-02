@@ -38,5 +38,8 @@ final class MessagesTest extends TestCase
 
         $flashMessages->add('msg', 'alert');
         $this->assertTrue($flashMessages->isMessages());
+
+        $flashMessages->clean();
+        $this->assertFalse($flashMessages->isMessages());
     }
 }
