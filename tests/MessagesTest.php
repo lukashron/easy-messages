@@ -15,8 +15,6 @@ namespace LukasHron\EasyMessages\Tests;
 use LukasHron\EasyMessages\Messages;
 use PHPUnit\Framework\TestCase;
 
-require __DIR__ . '/bootstrap.php';
-
 final class MessagesTest extends TestCase
 {
     public function testInit(): void

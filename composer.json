@@ -20,5 +20,10 @@
             "LukasHron\\EasyMessages\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "LukasHron\\EasyMessages\\Tests\\": "tests/"
+        }
+    },
     "minimum-stability": "dev"
 }
