@@ -4,17 +4,18 @@
 
 Simple PHP flash messages for small appplications.
 
-## Install
+Install
+-------
 ```
-composer require lukashron/easy-messages
+    $ composer require lukashron/easy-messages
 ```
 
-## Use
-
+Use
+---
 ```php
-$flashMessage = new \LukasHron\EasyMessages\Messages();
-$flashMessage->add('My flash messages', 'error');
-$flashMessage->render();
+    $flashMessage = new \LukasHron\EasyMessages\Messages();
+    $flashMessage->add('My flash messages', 'error');
+    $flashMessage->render();
 ```
 
 www.lukashron.cz
