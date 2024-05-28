@@ -12,32 +12,35 @@ declare(strict_types=1);
 
 namespace LukasHron\EasyMessages\Tests;
 
+use LukasHron\EasyMessages\Exceptions\InitException;
 use LukasHron\EasyMessages\Messages;
 use PHPUnit\Framework\TestCase;
 
 final class MessagesTest extends TestCase
 {
-    public function testInit(): void
+    private static Messages $flashMessages;
+
+    public static function setUpBeforeClass(): void
     {
-        $flashMessages = new Messages();
-        $this->assertFalse($flashMessages->init());
-
-        $sessionName = $flashMessages->getEmSessionName();
-        $this->assertTrue(strlen($sessionName) > 0);
-
-        unset($_SESSION[$sessionName]);
-        $this->assertTrue($flashMessages->init());
+        self::$flashMessages = new Messages();
     }
 
+    public function testInit(): void
+    {
+        $this->assertTrue(isset($_SESSION[Messages::EASY_MESSAGE_SESSION_IDENTIFIER]));
+    }
+
+    /**
+     * @throws InitException
+     */
     public function testCreateMessage(): void
     {
-        $flashMessages = new Messages();
-        $this->assertFalse($flashMessages->isMessages());
+        $this->assertFalse(self::$flashMessages->isMessages());
 
-        $flashMessages->add('msg', 'alert');
-        $this->assertTrue($flashMessages->isMessages());
+        self::$flashMessages->add('msg', 'alert');
+        $this->assertTrue(self::$flashMessages->isMessages());
 
-        $flashMessages->clean();
-        $this->assertFalse($flashMessages->isMessages());
+        self::$flashMessages->clean();
+        $this->assertFalse(self::$flashMessages->isMessages());
     }
 }

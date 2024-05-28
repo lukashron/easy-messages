@@ -12,8 +12,12 @@ declare (strict_types=1);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$flashMessage = new \LukasHron\EasyMessages\Messages();
-$flashMessage->add('Danger', 'danger');
-$flashMessage->add('Info', 'info');
-$flashMessage->add('Warning', 'warning');
-$flashMessage->render();
+try {
+    $flashMessage = new \LukasHron\EasyMessages\Messages();
+    $flashMessage->add('Danger', 'danger');
+    $flashMessage->add('Info', 'info');
+    $flashMessage->add('Warning', 'warning');
+    $flashMessage->render();
+} catch (\LukasHron\EasyMessages\Exceptions\InitException $e) {
+    echo $e->getMessage();
+}
