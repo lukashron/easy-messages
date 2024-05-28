@@ -2,6 +2,7 @@
     "name": "lukashron/easy-messages",
     "description": "Simple flash messages for PHP.",
     "type": "library",
+    "version": "2.0.0",
     "keywords": ["flash", "messages", "php"],
     "authors": [
         {
