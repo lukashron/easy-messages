@@ -18,4 +18,10 @@ Use
     $flashMessage->render();
 ```
 
+Test
+----
+```
+    $ docker compose exec app php ./vendor/bin/phpunit
+```
+
 www.lukashron.cz
