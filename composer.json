@@ -1,7 +1,8 @@
 {
     "name": "lukashron/easy-messages",
-    "description": "PHP very simple flash messages.",
+    "description": "Simple flash messages for PHP.",
     "type": "library",
+    "keywords": ["flash", "messages", "php"],
     "authors": [
         {
             "name": "Lukas Hron",
